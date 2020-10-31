@@ -129,15 +129,22 @@
         var bbotao = document.getElementById("bbotao");
 
         bcontainer.addEventListener("change", () => {
-              container.style.backgroundColor = bcontainer.value;
+            container.style.backgroundColor = bcontainer.value;
         })
         bformulario.addEventListener("change", () => {
             formulario.style.backgroundColor = bformulario.value;
         })
         btextos.addEventListener("change", () => {
+            //usar passando o index
             textos[0].style.color = btextos.value;
             textos[1].style.color = btextos.value;
+            //   // usar um for percorrendo todas classes
+            // for (i = 0; i < textos.length; i++) {
+            //     textos[i].style.color = btextos.value;;
+            //   }                  
+
         })
+
         bbotao.addEventListener("change", () => {
             botao.style.backgroundColor = bbotao.value;
         })
