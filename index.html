@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Login</title>
+</head>
+<style>
+  
+    .container{
+        background-color: rgb(92, 81, 67);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .formulario{
+        background-color: #c1bfb3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+       
+    }
+      .form-header{
+        font-weight: bold;
+      }
+    
+    .form-footer{
+        width: 100%;
+    }
+    .form-inputs{
+        width: 270px;
+        height: 25px;
+       margin-bottom: 3px;
+       transition: 0.5s;
+       outline: none;
+       border: 3px solid #ccc;
+    }
+    .form-inputs:focus{
+        border: 3px solid #555;
+    }
+    .botao{
+        height: 25px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        background-color: rgb(34 165 34);
+        font-weight: bold;
+    }
+    h5{
+        text-align: end;
+    }
+</style>
+
+
+
+<body>
+
+    <div class="container">
+
+
+
+        <div class="formulario">
+            <div class="form-header">
+                <h1>Login</h1>
+            </div>
+            <form>
+                <input class="form-inputs" type="text" placeholder="Usuario" >
+           
+                <input class="form-inputs" type="password" placeholder="Senha">
+               
+                <input class="botao" type="submit" value="LOGAR">
+            </form>
+            <div class="form-footer">
+               <h5>Esquece a senha ?</h5>
+            </div>
+
+</div>
+    </div>
+    
+</body>
+</html>
