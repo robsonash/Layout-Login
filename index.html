@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout Login</title>
 </head>
 <style>
-  
-    .container{
+    .container {
         background-color: rgb(92, 81, 67);
         width: 100%;
         height: 100vh;
@@ -16,43 +16,49 @@
         align-items: center;
         flex-direction: column;
     }
-    .formulario{
+
+    .formulario {
         background-color: #c1bfb3;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+        height: 600px;
         padding-bottom: 10px;
         padding-top: 10px;
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 5px;
     }
-    form{
+
+    form {
         display: flex;
         flex-direction: column;
-       
+
     }
-      .form-header{
+
+    .form-header {
         font-weight: bold;
-      }
-    
-    .form-footer{
+    }
+
+    .form-footer {
         width: 100%;
     }
-    .form-inputs{
+
+    .form-inputs {
         width: 270px;
         height: 25px;
-       margin-bottom: 3px;
-       transition: 0.5s;
-       outline: none;
-       border: 3px solid #ccc;
+        margin-bottom: 3px;
+        transition: 0.5s;
+        outline: none;
+        border: 3px solid #ccc;
     }
-    .form-inputs:focus{
+
+    .form-inputs:focus {
         border: 3px solid #555;
     }
-    .botao{
+
+    #botao {
         height: 25px;
         border: none;
         border-radius: 5px;
@@ -61,8 +67,22 @@
         background-color: rgb(34 165 34);
         font-weight: bold;
     }
-    h5{
+
+    h5 {
         text-align: end;
+    }
+
+    .controles {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1px;
+        margin-bottom: 10px;
+        background-color: #61797a5c;
+    }
+
+    .controles input {
+        margin: 10px;
     }
 </style>
 
@@ -70,27 +90,59 @@
 
 <body>
 
-    <div class="container">
+    <div id="container" class="container">
 
+        <div class="controles">
+            <input id="bcontainer" type="color" value="">
+            <input id="bformulario" type="color" value="">
+            <input id="btextos" type="color" value="">
+            <input id="bbotao" type="color" value="">
+        </div>
 
-
-        <div class="formulario">
+        <div id="formulario" class="formulario">
             <div class="form-header">
-                <h1>Login</h1>
+                <h1 class="textos">Login</h1>
             </div>
             <form>
-                <input class="form-inputs" type="text" placeholder="Usuario" >
-           
+                <input class="form-inputs" type="text" placeholder="Usuario">
+
                 <input class="form-inputs" type="password" placeholder="Senha">
-               
-                <input class="botao" type="submit" value="LOGAR">
+
+                <input id="botao" type="submit" value="LOGAR">
             </form>
             <div class="form-footer">
-               <h5>Esquece a senha ?</h5>
+                <h5 class="textos">Esquece a senha ?</h5>
             </div>
 
-</div>
+        </div>
     </div>
-    
+    <script>
+        //pegando campos
+        var container = document.getElementById("container");
+        var formulario = document.getElementById("formulario");
+        var textos = document.getElementsByClassName("textos");
+        var botao = document.getElementById("botao");
+        //pegando botoes
+        var bcontainer = document.getElementById("bcontainer");
+        var bformulario = document.getElementById("bformulario");
+        var btextos = document.getElementById("btextos");
+        var bbotao = document.getElementById("bbotao");
+
+        bcontainer.addEventListener("change", () => {
+              container.style.backgroundColor = bcontainer.value;
+        })
+        bformulario.addEventListener("change", () => {
+            formulario.style.backgroundColor = bformulario.value;
+        })
+        btextos.addEventListener("change", () => {
+            textos[0].style.color = btextos.value;
+            textos[1].style.color = btextos.value;
+        })
+        bbotao.addEventListener("change", () => {
+            botao.style.backgroundColor = bbotao.value;
+        })
+
+    </script>
 </body>
+
 </html>
